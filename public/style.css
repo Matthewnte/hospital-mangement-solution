@@ -3,7 +3,19 @@ body {
     margin: 0;
     padding: 0;
 }
-
+.bg-primary, .btn-teal {
+    background: teal !important;
+}
+a.active {
+    background: rgb(235, 168, 46) !important;
+    color: white !important;
+}
+p,th {
+    opacity: .8;
+}
+.hide {
+    display: none;
+}
 /* nav.navbar.navbar-expand-lg.navbar-dark.bg-primary {
     background-color: teal !important;
 } */
