@@ -1,0 +1,52 @@
+{
+  "admin": [
+    {}
+  ],
+  "patients": [
+    {
+      "name": "Nte Matthew",
+      "contact": "2347065390558",
+      "address": "8 Nvuigwe",
+      "room": "c63",
+      "date": "2019-09-25",
+      "time": "12:32",
+      "id": 1
+    },
+    {
+      "name": "Josh Doe",
+      "email": "Joshdoe@gmail.com",
+      "contact": "+234 2234 635 5632",
+      "gender": "Male",
+      "occupation": "Geologist",
+      "dob": "2019-10-15",
+      "address": "8 Nvuigwe",
+      "date": "2019-10-15",
+      "time": "11:11",
+      "id": 2
+    },
+    {
+      "name": "",
+      "email": "",
+      "contact": "",
+      "gender": "Male",
+      "occupation": "",
+      "dob": "",
+      "address": "",
+      "date": "",
+      "time": "",
+      "id": 3
+    },
+    {
+      "name": "",
+      "email": "",
+      "contact": "",
+      "gender": "Male",
+      "occupation": "",
+      "dob": "",
+      "address": "",
+      "date": "",
+      "time": "",
+      "id": 4
+    }
+  ]
+}
