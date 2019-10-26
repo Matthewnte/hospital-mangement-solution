@@ -5,27 +5,56 @@ $(() => {
             email: $('#cp-email').val(),
             contact: $('#cp-contact').val(),
             gender: $('#cp-gender').val(),
-            occupation: $('#cp-occupation').val(),
-            dob: $('#cp-dob').val(),
             address: $('#cp-address').val(),
-            date: $('#cp-date').val(),
-            time: $('#cp-time').val(),
+            date: `${year}-${month}-${day}`,
+            time: `${hour}:${minute}`,
+            status: 'Checked in',
+            bloodGroup: $('#cp-blood-group').val(),
+            surgery: $('#cp-surgery').val(),
+            imgUrl: $('#cp-imgUrl').val()
         }
+
         $.post('http://localhost:3000/patients', data,  () => {
-            $('#patient-table-body').append('<tr></tr>').append(`
-            <td><img src="./assets/images/patients/patient3.jpg" alt="Picture of Patient" width="60em" class="img-fluid rounded-circle"></td>
-            <td class="align-middle">${data.name}</td>
-            <td class="align-middle">${data.email}</td>
-            <td class="align-middle">${data.contact}</td>
-            <td class="align-middle">${data.address}</td>
-            <td class="align-middle">${data.date}</td>
-            <td class="align-middle">${data.time}</td>
-            <td class="align-middle">${data.status}</td>
-            <td class="align-middle"><button patientId="${data.id}" class="btn btn-sm btn-teal text-white">View Profile</button></td>
-            <td class="align-middle"><button patientId="${data.id}" data-toggle="modal" data-target="#updateModal" id="edit" class="btn"><i class="fa fa-user-edit text-primary"></i></button>
-                <button patientId="${data.id}" id="trash" data-toggle="modal" data-target="#delete-modal" class="btn text-danger"><i class="fa fa-trash"></i></button></td>`)
-            
+            getPatients(data);
+            allPatients(data);
+
+            $('.modal').modal('hide');
             alert('Patient Created Successfully');
         })
     })
+
+    // history patient
+    // $('#patient-table-body').on('click', '#patient-status', function () {
+    //     let id = $(this).attr('patientId');
+    //     console.log(id)
+
+    //     $('#checkInSubmit').on('click', function() {
+    //         const data = {
+    //             presentIllness: $('#presentIllness').val(),
+    //             caseSummary: $('#caseSummary').val(),
+    //             checkintime: `${hour}:${minute}`,
+    //             checkindate: `${year}-${month}-${day}`
+    //         }
+
+    //         console.log(data)
+
+    //         $.post('http://localhost:3000/checkin/' + id, data, () => {
+    //             $('#history-table').append(`<tr></tr>`)
+    //             .append(`<td>${data.presentIllness}</td>
+    //             <td>${data.caseSummary}</td>
+    //             <td>${data.checkIntime}</td>
+    //             <td>${data.checkIndate}</td>`)
+
+    //             $('.modal').modal('hide');
+    //             alert('Patient Checked in successfully');
+    //         })
+    //     })
+    // })
 })
+
+const date = new Date();
+const day = date.getDate(); 
+const month = date.getMonth();
+const year = date.getFullYear();
+const hour = date.getHours();
+const minute = date.getMinutes();
