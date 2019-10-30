@@ -6,8 +6,8 @@ body {
 .bg-primary, .btn-teal {
     background: teal !important;
 }
-a.active {
-    background: rgb(235, 168, 46) !important;
+a.active, .btn-warning {
+    background: rgb(236, 171, 50) !important;
     color: white !important;
 }
 p,th {
@@ -16,6 +16,20 @@ p,th {
 .hide {
     display: none;
 }
-/* nav.navbar.navbar-expand-lg.navbar-dark.bg-primary {
-    background-color: teal !important;
-} */
+.align-middle {
+    vertical-align: middle;
+}
+.col-1-5 {
+    width: 20% ;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px
+}
+.hide {
+    display: none;
+}
+#history-table th {
+    width: 8em;
+}
